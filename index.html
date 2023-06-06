@@ -7,21 +7,65 @@
     <link rel="shortcut icon" href="assets/img/Logo-pro.png" type="image/x-icon">
     <link rel="stylesheet" href="public/styles/style.css">
     <title>Advanced_Form FireBase Project</title>
+    <style>
+      img {
+        width: 400px;
+      }
+    </style>
 </head>
 <body>
     <div class="container">
       <div class="container__hero">
         <h1 class="container__hero__title">The unique place you can be yourself and nobody else !</h1>
-        
-
+        <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/06/Screenshot-448-e1622390297717.png?auto=format&q=60&fit=max&w=1000" alt="image d'acceuil - design inclusif">
+        <a href="" class="container__hero__button">Job offers</a>
         <span>Crédentials : BlacKoder 2023 @copyrights design</span>
       </div>
 
-      <div class="container__form">
-        
+      <div class="container__auth">
+        <div class="container__auth__intro">
+          <h2>You're already there !</h2>
+          <span>Only one more step and it'll be done</span>
+        </div>
+        <div class="container__auth__form">
+          <div class="auth__selection">
+            
+          </div>
+          <form class="auth auth__login">
+            <div class="form-group">
+              <label for="email">Email :</label>
+              <input type="e-mail" class="form-input" id="email" name="userEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password :</label>
+                <input type="password" class="form-input" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="form-validation">LOGIN</button>
+          </form>
+          
+          <form class="auth auth__signin">
+            <div class="form-group">
+              <label for="email">Email :</label>
+              <input type="e-mail" class="form-input" id="email" name="useremail" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+              <label for="email">User name :</label>
+              <input type="text" class="form-input" id="username" name="userName" placeholder="Enter your user name">
+            </div>
+
+            <div class="form-group">
+              <label for="pwd">Password :</label>
+              <input type="password" class="form-input" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="form-validation">REGISTER</button>
+          </form>
+
+        </div>
       </div>
     </div>
 
+    <!--https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/06/Screenshot-448-e1622390297717.png?auto=format&q=60&fit=max&w=930-->
     <script src="public/scripts/Main.js"></script>
 </body>
 </html>
