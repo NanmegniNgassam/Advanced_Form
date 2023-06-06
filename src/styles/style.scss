@@ -1,7 +1,39 @@
-@import url('basics.scss');
-@import url('layout.scss');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:ital,wght@0,300;1,300&display=swap');
 
 // Définition des varaibles globales
+$first-color : #487eb0;
+$first-color-light : #a3caee;
+$first-color-alt : #273c75;
+$title-color : #e1b12c;
+$title-color-alt : #f5f6fa;
+$text-color : #333;
+$text-color-alt : #2f3640;
+$text-color-imp : #192a56;
+$container-color : #f5f6fa;
+$container-color-active : #dcdde1;
+$error-message : #c23616;
+$granted-message : #44bd32;
+
+/*---------Font and Typography--------------*/
+$body-font: 'Roboto';
+$title-font : 'Kdam Thmor Pro', sans-serif;
+
+$title-font-size: 2rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.125rem;
+$normal-font-size: 0.938rem;
+$small-font-size: 0.813rem;
+$smaller-font-size: 0.75rem;
+
+//responsive typography
+@media screen and (max-width: 600px) {
+    $title-font-size: 3rem;
+    $h2-font-size: 1.75rem;
+    $h3-font-size: 1.25rem;
+    $normal-font-size: 1rem;
+    $small-font-size: 0.875rem;
+    $smaller-font-size: 0.813rem;
+}
 
 // Définition d'un fichier pour le layout
 
@@ -10,4 +42,23 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: $body-font;
+}
+
+.container {
+    display: flex;
+    flex-flow: row-reverse;
+    height: 100vh;
+    &__hero {
+        background-color: $first-color;
+        color: $title-color-alt;
+        width: 60%;
+        &__title {
+            font-family: $title-font;
+            font-size: $title-font-size;
+        }
+    }
+    &__form {
+        background-color: $container-color-active;
+    }
 }

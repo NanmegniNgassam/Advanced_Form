@@ -1,10 +1,28 @@
-@import url("basics.scss");
-@import url("layout.scss");
-
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:ital,wght@0,300;1,300&display=swap");
+/*---------Font and Typography--------------*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+.container {
+  display: flex;
+  flex-flow: row-reverse;
+  height: 100vh;
+}
+.container__hero {
+  background-color: #487eb0;
+  color: #f5f6fa;
+  width: 60%;
+}
+.container__hero__title {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 2rem;
+}
+.container__form {
+  background-color: #dcdde1;
 }
 
 /*# sourceMappingURL=style.css.map */
