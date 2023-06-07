@@ -61,6 +61,9 @@ $smaller-font-size: 0.75rem;
             font-family: $title-font;
             font-size: $title-font-size;
         }
+        &__img{
+            width: 400px;
+        }
         &__button{
             width: 250px;
             height: 40px;
@@ -77,12 +80,29 @@ $smaller-font-size: 0.75rem;
             color: $title-color-alt;
         }
     }
+
     &__auth {
         background-color: $container-color-active;
-        border: 1px solid black;
+        border: 1px solid black inset;
         width: 40%;
         position: relative;
-        .auth{
+        &__intro {
+            h2 {
+                font-family: $title-font;
+                color: $title-color;
+                font-size: $title-font-size;
+                padding: 0 20px;
+                margin: 40px auto;
+            }
+            span {
+                display: block;
+                text-align: center;
+                font-size: $h3-font-size;
+            }
+        }
+        &__form {
+            border: 1px solid black;
+            box-shadow: 3px 3px 5px $text-color;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -91,5 +111,49 @@ $smaller-font-size: 0.75rem;
         .auth__signin {
             display: none;
         }
+    }
+}
+
+.auth {
+    background-color: $container-color;
+    border-radius: 5px 5px;
+    padding: 20px;
+    width: 60%;
+    min-width: 300px;
+    max-width: 600px;
+    &__selection {
+        display: flex;
+        margin-bottom: 20px;
+        cursor: pointer;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bolder;
+        &__login {
+            width: 50%;
+            text-align: center;
+            border: 1px solid gray;
+        }
+        &__signin {
+            width: 50%;
+            text-align: center;
+            border: 1px solid gray;
+        }
+        .active {
+            background-color: $title-color;
+            color: $title-color-alt;
+        }
+    }
+    label, span {
+        display: block;
+        margin: 5px 0;
+    }
+    input {
+        margin: 5px 0;
+    }
+    &__login {
+        
+    }
+    &__signin {
+
     }
 }

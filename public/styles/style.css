@@ -25,6 +25,9 @@
   font-family: "Kdam Thmor Pro", sans-serif;
   font-size: 2rem;
 }
+.container__hero__img {
+  width: 400px;
+}
 .container__hero__button {
   width: 250px;
   height: 40px;
@@ -42,11 +45,25 @@
 }
 .container__auth {
   background-color: #dcdde1;
-  border: 1px solid black;
+  border: 1px solid black inset;
   width: 40%;
   position: relative;
 }
-.container__auth .auth {
+.container__auth__intro h2 {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  color: #e1b12c;
+  font-size: 2rem;
+  padding: 0 20px;
+  margin: 40px auto;
+}
+.container__auth__intro span {
+  display: block;
+  text-align: center;
+  font-size: 1.125rem;
+}
+.container__auth__form {
+  border: 1px solid black;
+  box-shadow: 3px 3px 5px #333;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,6 +71,44 @@
 }
 .container__auth .auth__signin {
   display: none;
+}
+
+.auth {
+  background-color: #f5f6fa;
+  border-radius: 5px 5px;
+  padding: 20px;
+  width: 60%;
+  min-width: 300px;
+  max-width: 600px;
+}
+.auth__selection {
+  display: flex;
+  margin-bottom: 20px;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bolder;
+}
+.auth__selection__login {
+  width: 50%;
+  text-align: center;
+  border: 1px solid gray;
+}
+.auth__selection__signin {
+  width: 50%;
+  text-align: center;
+  border: 1px solid gray;
+}
+.auth__selection .active {
+  background-color: #e1b12c;
+  color: #f5f6fa;
+}
+.auth label, .auth span {
+  display: block;
+  margin: 5px 0;
+}
+.auth input {
+  margin: 5px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

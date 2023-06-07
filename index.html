@@ -6,33 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/Logo-pro.png" type="image/x-icon">
     <link rel="stylesheet" href="public/styles/style.css">
-    <title>Advanced_Form FireBase Project</title>
-    <style>
-      img {
-        width: 400px;
-      }
-    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Advanced_Form LocalStorage Project</title>
 </head>
 <body>
     <div class="container">
       <div class="container__hero">
-        <h1 class="container__hero__title">The unique place you can be yourself and nobody else !</h1>
-        <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/06/Screenshot-448-e1622390297717.png?auto=format&q=60&fit=max&w=1000" alt="image d'acceuil - design inclusif">
+        <h1 class="container__hero__title">The unique place you can be yourself and nowhere else !</h1>
+        <img class="container__hero__img" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/06/Screenshot-448-e1622390297717.png?auto=format&q=60&fit=max&w=1000" alt="image d'acceuil - design inclusif">
         <a href="" class="container__hero__button">Job offers</a>
         <span>Crédentials : BlacKoder 2023 @copyrights design</span>
       </div>
 
       <div class="container__auth">
         <div class="container__auth__intro">
-          <h2>You're already there !</h2>
-          <span>Only one more step and it'll be done</span>
+          <h2>You're already there <i class='bx bxs-star' style='color:#e1b12c'>!</i></h2>
+          <span>Only one more step and it'll be done !</span>
         </div>
-        <div class="container__auth__form">
+        <div class="auth container__auth__form">
           <div class="auth__selection">
-            
+            <div class="auth__selection__login active" id="loginTrigger">Login</div>
+            <div class="auth__selection__signin" id="signinTrigger">Signin</div>
           </div>
-          <form class="auth auth__login">
+          <form class="auth__login">
             <div class="form-group">
+              <!--Insertion des messages relatifs à la validation -->
               <label for="email">Email :</label>
               <input type="e-mail" class="form-input" id="email" name="userEmail" placeholder="Enter your email">
             </div>
@@ -40,10 +38,10 @@
                 <label for="pwd">Password :</label>
                 <input type="password" class="form-input" id="password" name="password" placeholder="Enter your password">
             </div>
-            <button type="submit" class="form-validation">LOGIN</button>
+            <button type="submit" class="form-validation"><i class='bx bxs-log-in'></i> LOGIN</button>
           </form>
           
-          <form class="auth auth__signin">
+          <form class="auth__signin">
             <div class="form-group">
               <label for="email">Email :</label>
               <input type="e-mail" class="form-input" id="email" name="useremail" placeholder="Enter your email">
@@ -58,7 +56,7 @@
               <label for="pwd">Password :</label>
               <input type="password" class="form-input" id="password" name="password" placeholder="Enter your password">
             </div>
-            <button type="submit" class="form-validation">REGISTER</button>
+            <button type="submit" class="form-validation"><i class='bx bxs-registered' ></i> REGISTER</button>
           </form>
 
         </div>
