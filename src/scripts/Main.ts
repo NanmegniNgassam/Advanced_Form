@@ -4,6 +4,7 @@ let signiniTrigger = document.getElementById('signinTrigger');
 let loginForm = document.getElementById('loginForm');
 let signinForm = document.getElementById('signinForm');
 
+
 loginTrigger?.addEventListener('click', (e) => {
     loginTrigger?.classList.add('active');
     signiniTrigger?.classList.remove('active');

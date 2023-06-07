@@ -12,7 +12,7 @@ $text-color-imp : #192a56;
 $container-color : #f5f6fa;
 $container-color-active : #dcdde1;
 $error-message : #c23616;
-$granted-message : #44bd32;
+$granted-message : #1da408;
 
 /*---------Font and Typography--------------*/
 $body-font: 'Roboto';
@@ -68,6 +68,9 @@ $smaller-font-size: 0.75rem;
             font-size: $title-font-size;
             text-align: center;
             padding: 0 10px;
+            @media screen and (max-width: 800px) {
+                font-size: 1.5rem;
+            }
         }
         &__img{
             width: 400px;
@@ -130,7 +133,7 @@ $smaller-font-size: 0.75rem;
             transform: translate(-50%, -50%);
             @media screen and (max-width: 800px) {
                 position: relative;
-                top: 200px;
+                top: 250px;
             }
         }
     }
@@ -188,6 +191,20 @@ $smaller-font-size: 0.75rem;
             border: 1px solid $title-color;
             border-radius: 3px 3px;
         }
+    }
+    .access-denied {
+        text-align: center;
+        color: $title-color-alt;
+        background-color: $error-message;
+        font-size: .9rem;
+        line-height: 1.2rem;
+    }
+    .access-granted {
+        text-align: center;
+        color: $title-color-alt;
+        background-color: $granted-message;
+        font-size: .9rem;
+        line-height: 1.2rem;
     }
     .form-validation {
         width: 260px;
