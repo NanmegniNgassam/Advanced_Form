@@ -108,9 +108,6 @@ $smaller-font-size: 0.75rem;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .auth__signin {
-            display: none;
-        }
     }
 }
 
@@ -147,13 +144,36 @@ $smaller-font-size: 0.75rem;
         display: block;
         margin: 5px 0;
     }
-    input {
-        margin: 5px 0;
+    .form-group {
+        input {
+            margin: 5px 0;
+            width: 260px;
+            height: 30px;
+            display: block;
+            margin: 0 auto;
+            padding-left: 10px;
+        }
+    }
+    .form-validation {
+        width: 260px;
+        height: 40px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+        font-family: $title-font;
+        border: 1px solid black;
+        transition: .5s;
+    }
+    .form-validation:hover {
+        background-color: $title-color;
     }
     &__login {
-        
+        display: none;
     }
     &__signin {
-
+        display: none;
+    }
+    .active {
+        display: block;
     }
 }

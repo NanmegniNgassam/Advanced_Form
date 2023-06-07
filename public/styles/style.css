@@ -69,9 +69,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.container__auth .auth__signin {
-  display: none;
-}
 
 .auth {
   background-color: #f5f6fa;
@@ -107,8 +104,35 @@
   display: block;
   margin: 5px 0;
 }
-.auth input {
+.auth .form-group input {
   margin: 5px 0;
+  width: 260px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  padding-left: 10px;
+}
+.auth .form-validation {
+  width: 260px;
+  height: 40px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  border: 1px solid black;
+  transition: 0.5s;
+}
+.auth .form-validation:hover {
+  background-color: #e1b12c;
+}
+.auth__login {
+  display: none;
+}
+.auth__signin {
+  display: none;
+}
+.auth .active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
