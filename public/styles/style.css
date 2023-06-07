@@ -111,6 +111,12 @@
   display: block;
   margin: 0 auto;
   padding-left: 10px;
+  outline: none;
+}
+.auth .form-group input:focus {
+  width: 280px;
+  border: 1px solid;
+  border-radius: 3px 3px;
 }
 .auth .form-validation {
   width: 260px;

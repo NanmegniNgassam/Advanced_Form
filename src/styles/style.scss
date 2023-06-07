@@ -152,6 +152,12 @@ $smaller-font-size: 0.75rem;
             display: block;
             margin: 0 auto;
             padding-left: 10px;
+            outline: none;
+        }
+        input:focus {
+            width: 280px;
+            border: 1px solid;
+            border-radius: 3px 3px;
         }
     }
     .form-validation {
