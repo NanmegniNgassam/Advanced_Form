@@ -26,13 +26,11 @@ $small-font-size: 0.813rem;
 $smaller-font-size: 0.75rem;
 
 //responsive typography
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     $title-font-size: 3rem;
     $h2-font-size: 1.75rem;
     $h3-font-size: 1.25rem;
     $normal-font-size: 1rem;
-    $small-font-size: 0.875rem;
-    $smaller-font-size: 0.813rem;
 }
 
 // Définition d'un fichier pour le layout
@@ -49,6 +47,10 @@ $smaller-font-size: 0.75rem;
     display: flex;
     flex-flow: row-reverse;
     height: 100vh;
+    @media screen and (max-width: 800px) {
+        flex-direction: column-reverse;
+        height:fit-content;
+    }
     &__hero {
         background-color: $first-color;
         color: $title-color-alt;
@@ -57,12 +59,22 @@ $smaller-font-size: 0.75rem;
         justify-content: space-evenly;
         align-items: center;
         width: 60%;
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            gap: 20px;
+        }
         &__title {
             font-family: $title-font;
             font-size: $title-font-size;
+            text-align: center;
+            padding: 0 10px;
         }
         &__img{
             width: 400px;
+            @media screen and (max-width: 800px) {
+                width: 80%;
+                min-width: 250px;
+            }
         }
         &__button{
             width: 250px;
@@ -86,13 +98,22 @@ $smaller-font-size: 0.75rem;
         border: 1px solid black inset;
         width: 40%;
         position: relative;
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            height: 550px;
+        }
         &__intro {
             h2 {
                 font-family: $title-font;
                 color: $title-color;
                 font-size: $title-font-size;
+                text-align: center;
                 padding: 0 20px;
-                margin: 40px auto;
+                margin: 20px auto;
+                @media screen and (max-width: 800px) {
+                    margin: -5px auto;
+                    font-size: $h2-font-size;
+                }
             }
             span {
                 display: block;
@@ -107,6 +128,10 @@ $smaller-font-size: 0.75rem;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            @media screen and (max-width: 800px) {
+                position: relative;
+                top: 200px;
+            }
         }
     }
 }
@@ -145,18 +170,22 @@ $smaller-font-size: 0.75rem;
         margin: 5px 0;
     }
     .form-group {
+        margin: 2px;
         input {
             margin: 5px 0;
             width: 260px;
             height: 30px;
             display: block;
             margin: 0 auto;
-            padding-left: 10px;
+            padding:0 10px;
             outline: none;
         }
+        @media screen and (max-width: 800px) {
+            margin-bottom: 10px;
+        }
         input:focus {
-            width: 280px;
-            border: 1px solid;
+            
+            border: 1px solid $title-color;
             border-radius: 3px 3px;
         }
     }

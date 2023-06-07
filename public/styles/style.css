@@ -12,6 +12,12 @@
   flex-flow: row-reverse;
   height: 100vh;
 }
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+}
 .container__hero {
   background-color: #487eb0;
   color: #f5f6fa;
@@ -21,12 +27,26 @@
   align-items: center;
   width: 60%;
 }
+@media screen and (max-width: 800px) {
+  .container__hero {
+    width: 100%;
+    gap: 20px;
+  }
+}
 .container__hero__title {
   font-family: "Kdam Thmor Pro", sans-serif;
   font-size: 2rem;
+  text-align: center;
+  padding: 0 10px;
 }
 .container__hero__img {
   width: 400px;
+}
+@media screen and (max-width: 800px) {
+  .container__hero__img {
+    width: 80%;
+    min-width: 250px;
+  }
 }
 .container__hero__button {
   width: 250px;
@@ -49,12 +69,25 @@
   width: 40%;
   position: relative;
 }
+@media screen and (max-width: 800px) {
+  .container__auth {
+    width: 100%;
+    height: 550px;
+  }
+}
 .container__auth__intro h2 {
   font-family: "Kdam Thmor Pro", sans-serif;
   color: #e1b12c;
   font-size: 2rem;
+  text-align: center;
   padding: 0 20px;
-  margin: 40px auto;
+  margin: 20px auto;
+}
+@media screen and (max-width: 800px) {
+  .container__auth__intro h2 {
+    margin: -5px auto;
+    font-size: 1.25rem;
+  }
 }
 .container__auth__intro span {
   display: block;
@@ -68,6 +101,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 800px) {
+  .container__auth__form {
+    position: relative;
+    top: 200px;
+  }
 }
 
 .auth {
@@ -104,18 +143,25 @@
   display: block;
   margin: 5px 0;
 }
+.auth .form-group {
+  margin: 2px;
+}
 .auth .form-group input {
   margin: 5px 0;
   width: 260px;
   height: 30px;
   display: block;
   margin: 0 auto;
-  padding-left: 10px;
+  padding: 0 10px;
   outline: none;
 }
+@media screen and (max-width: 800px) {
+  .auth .form-group {
+    margin-bottom: 10px;
+  }
+}
 .auth .form-group input:focus {
-  width: 280px;
-  border: 1px solid;
+  border: 1px solid #e1b12c;
   border-radius: 3px 3px;
 }
 .auth .form-validation {
