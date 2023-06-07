@@ -1,14 +1,17 @@
+import { User } from "./Account";
+// Gestion de la zone de sauvegarde
 let localDataKey = 'accounts'
 
-export class Account {
-    constructor(
-        private userName : string,
-        private userEmail : string,
-        private birthdate : Date,
-        private password  : string
-    ) {}
+let createAccount = (userEmail:string, userName:string, birthday:Date, password:string) => {
+    let db = localStorage.getItem(localDataKey);
+    let data = {
+        
+    }
 
-    public format():string {
-        return ('');
+    if(db == null) {
+        localStorage.setItem(localDataKey, '');
+    } else {
+        console.log('db already exists !');
     }
 }
+

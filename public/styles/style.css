@@ -90,7 +90,6 @@
 }
 @media screen and (max-width: 800px) {
   .container__auth__intro h2 {
-    margin: -5px auto;
     font-size: 1.25rem;
   }
 }
@@ -110,7 +109,7 @@
 @media screen and (max-width: 800px) {
   .container__auth__form {
     position: relative;
-    top: 250px;
+    top: 220px;
   }
 }
 

@@ -114,7 +114,6 @@ $smaller-font-size: 0.75rem;
                 padding: 0 20px;
                 margin: 20px auto;
                 @media screen and (max-width: 800px) {
-                    margin: -5px auto;
                     font-size: $h2-font-size;
                 }
             }
@@ -133,7 +132,7 @@ $smaller-font-size: 0.75rem;
             transform: translate(-50%, -50%);
             @media screen and (max-width: 800px) {
                 position: relative;
-                top: 250px;
+                top: 220px;
             }
         }
     }

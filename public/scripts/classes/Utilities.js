@@ -1,16 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Account = void 0;
+// Gestion de la zone de sauvegarde
 let localDataKey = 'accounts';
-class Account {
-    constructor(userName, userEmail, birthdate, password) {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.birthdate = birthdate;
-        this.password = password;
+let createAccount = (userEmail, userName, birthday, password) => {
+    let db = localStorage.getItem(localDataKey);
+    let data = {};
+    if (db == null) {
+        localStorage.setItem(localDataKey, '');
     }
-    format() {
-        return ('');
+    else {
+        console.log('db already exists !');
     }
-}
-exports.Account = Account;
+};
+export {};
