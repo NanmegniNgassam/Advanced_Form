@@ -13,18 +13,50 @@ let createAccount = (userEmail:string, userName:string, userBirthday:Date, userP
     let accounts = Array();
     let req :string;
 
-    if(db == null) {
+    if(db == null) { // users accounts db is empty
+        // Ajout de deux comptes fictifs
+        accounts.push({
+            name : 'Gilles',
+            email : 'gilles@gmail.com',
+            birth : '2004-01-07T00:00:00.000Z',
+            password : 'killer'
+        });
+        accounts.push({
+            name : 'Root',
+            email : 'root@gmail.com',
+            birth : '2002-01-01T00:00:00.000Z',
+            password : 'killer'
+        });
+
+        //vérifier si les clés de connexions passées n'existent pas déjà
+
         accounts.push(data);
         req = JSON.stringify(accounts);
         localStorage.setItem(localDataKey, req);
-    } else {
+    } else { //user accounts db already exists
         accounts = JSON.parse(db);
         accounts.push(data);
-        console.log(accounts);
         req = JSON.stringify(accounts);
         localStorage.setItem(localDataKey,req);
     }
 }
+
+let tryConnection = (email:string, password:string) :(Object|null) => {
+    let accounts = Array();
+    let account;
+    let req;
+
+    req = localStorage.getItem(localDataKey);
+    
+    if(req == null) {
+        return null;
+    } else {
+        accounts = JSON.parse(req);
+
+        return {};
+    }
+}
+
 
 /*Form Handling*/
 let loginForm1 = document.getElementById('loginForm') as HTMLFormElement;
@@ -52,7 +84,12 @@ loginForm1.addEventListener('submit', (e) => {
     ;
 
     if(tryConnectStatus) {
-        console.log("Lancement de la procédure de verification de la base de données");
+        let result = tryConnection(emailLogin.value, passwordLogin.value);
+
+        // Définition d'une session storage pour la session active
+
+        //redirection
+
     } else {
         loginMessage.textContent = "something's wrong with your datas";
     }
