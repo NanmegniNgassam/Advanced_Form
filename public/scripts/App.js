@@ -1,8 +1,21 @@
 "use strict";
+/*Form Handling*/
+let loginForm1 = document.getElementById('loginForm');
+let signinForm1 = document.getElementById('signinForm');
+/*Inputs management*/
+let emailSignin = document.getElementById('email-signin');
+let userNameSignin = document.getElementById('username-signin');
+let userBirthdateSignin = document.getElementById('userbirthday-signin');
+let userPasswordSignin = document.getElementById('password-signin');
+let signinMessage = document.getElementById('signin-message');
+let emailLogin = document.getElementById('email-login');
+let passwordLogin = document.getElementById('password-login');
+let loginMessage = document.getElementById('login-message');
 // Gestion de la zone mémoire
 let localDataKey = 'accounts';
 let createAccount = (userEmail, userName, userBirthday, userPassword) => {
     let db = localStorage.getItem(localDataKey);
+    let isAccountUnique = true;
     let data = {
         name: userName,
         email: userEmail,
@@ -26,20 +39,45 @@ let createAccount = (userEmail, userName, userBirthday, userPassword) => {
             password: 'killer'
         });
         //vérifier si les clés de connexions passées n'existent pas déjà
-        accounts.push(data);
+        accounts.map((account) => {
+            if ((account.email == data.email) && (account.password == data.password)) {
+                isAccountUnique = false;
+            }
+        });
+        if (isAccountUnique) {
+            accounts.push(data);
+        }
+        else {
+            signinMessage.classList.remove('access-granted');
+            signinMessage.classList.add('access-denied');
+            signinMessage.textContent = "Account already exists";
+        }
         req = JSON.stringify(accounts);
         localStorage.setItem(localDataKey, req);
     }
     else { //user accounts db already exists
         accounts = JSON.parse(db);
-        accounts.push(data);
+        //vérifier si les clés de connexions passées n'existent pas déjà
+        accounts.map((account) => {
+            if ((account.email == data.email) && (account.password == data.password)) {
+                isAccountUnique = false;
+            }
+        });
+        if (isAccountUnique) {
+            accounts.push(data);
+        }
+        else {
+            signinMessage.classList.remove('access-granted');
+            signinMessage.classList.add('access-denied');
+            signinMessage.textContent = "Account already exists";
+        }
         req = JSON.stringify(accounts);
         localStorage.setItem(localDataKey, req);
     }
 };
 let tryConnection = (email, password) => {
     let accounts = Array();
-    let account;
+    let matchingAccount = null;
     let req;
     req = localStorage.getItem(localDataKey);
     if (req == null) {
@@ -47,21 +85,15 @@ let tryConnection = (email, password) => {
     }
     else {
         accounts = JSON.parse(req);
-        return {};
+        // recherche du couple email-motDePasse correspondant à la tentative de connexion
+        accounts.map((account) => {
+            if ((account.email == email) && (account.password == password)) {
+                matchingAccount = account;
+            }
+        });
+        return matchingAccount;
     }
 };
-/*Form Handling*/
-let loginForm1 = document.getElementById('loginForm');
-let signinForm1 = document.getElementById('signinForm');
-/*Inputs management*/
-let emailSignin = document.getElementById('email-signin');
-let userNameSignin = document.getElementById('username-signin');
-let userBirthdateSignin = document.getElementById('userbirthday-signin');
-let userPasswordSignin = document.getElementById('password-signin');
-let signinMessage = document.getElementById('signin-message');
-let emailLogin = document.getElementById('email-login');
-let passwordLogin = document.getElementById('password-login');
-let loginMessage = document.getElementById('login-message');
 // Traitement du formulaire de connexion
 loginForm1.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -70,10 +102,20 @@ loginForm1.addEventListener('submit', (e) => {
         (passwordLogin.value.length > 0);
     if (tryConnectStatus) {
         let result = tryConnection(emailLogin.value, passwordLogin.value);
-        // Définition d'une session storage pour la session active
-        //redirection
+        if (result == null) {
+            loginMessage.classList.remove('access-granted');
+            loginMessage.classList.add('access-denied');
+            loginMessage.textContent = "Account doesn't already exist !";
+        }
+        else {
+            // Définition d'une session storage pour la session active
+            console.log(result);
+            //redirection
+        }
     }
     else {
+        loginMessage.classList.remove('access-granted');
+        loginMessage.classList.add('access-denied');
         loginMessage.textContent = "something's wrong with your datas";
     }
     //vérification de la cohérence des données avec la base des utilisateurs
@@ -95,7 +137,7 @@ signinForm1.addEventListener('submit', (e) => {
     if (validationStatus) {
         signinMessage.classList.add('access-granted');
         signinMessage.classList.remove('access-denied');
-        signinMessage.textContent = "Account creation was succesful";
+        signinMessage.textContent = "Account creation was succesful ! \n Now login";
         //Création du coockie contenant les informations du compte utilisateur
         //redirection vers la page utilisateur
         createAccount(emailSignin.value, userNameSignin.value, birthEntry, userPasswordSignin.value);
