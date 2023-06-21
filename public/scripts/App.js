@@ -13,6 +13,7 @@ let passwordLogin = document.getElementById('password-login');
 let loginMessage = document.getElementById('login-message');
 // Gestion de la zone mémoire
 let localDataKey = 'accounts';
+let sessionDataKey = 'logged';
 let createAccount = (userEmail, userName, userBirthday, userPassword) => {
     let db = localStorage.getItem(localDataKey);
     let isAccountUnique = true;
@@ -109,8 +110,9 @@ loginForm1.addEventListener('submit', (e) => {
         }
         else {
             // Définition d'une session storage pour la session active
-            console.log(result);
+            sessionStorage.setItem(sessionDataKey, JSON.stringify(result));
             //redirection
+            window.location.href = 'public/pages/user.html';
         }
     }
     else {
@@ -118,8 +120,6 @@ loginForm1.addEventListener('submit', (e) => {
         loginMessage.classList.add('access-denied');
         loginMessage.textContent = "something's wrong with your datas";
     }
-    //vérification de la cohérence des données avec la base des utilisateurs
-    // Rédirections vers la page utilisateur
 });
 //Traitement du formulaire d'inscription
 signinForm1.addEventListener('submit', (e) => {

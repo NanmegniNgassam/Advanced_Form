@@ -16,7 +16,8 @@ let loginMessage = document.getElementById('login-message') as HTMLSpanElement;
 
 
 // Gestion de la zone mémoire
-let localDataKey = 'accounts'
+let localDataKey = 'accounts';
+let sessionDataKey = 'logged';
 
 let createAccount = (userEmail:string, userName:string, userBirthday:Date, userPassword:string) => {
     let db = localStorage.getItem(localDataKey);
@@ -128,9 +129,10 @@ loginForm1.addEventListener('submit', (e) => {
             loginMessage.textContent = "Account doesn't already exist !";
         } else {
             // Définition d'une session storage pour la session active
-            console.log(result);
+            sessionStorage.setItem(sessionDataKey, JSON.stringify(result));
 
             //redirection
+            window.location.href = 'public/pages/user.html';
         }
 
     } else {
@@ -138,9 +140,6 @@ loginForm1.addEventListener('submit', (e) => {
         loginMessage.classList.add('access-denied');
         loginMessage.textContent = "something's wrong with your datas";
     }
-    //vérification de la cohérence des données avec la base des utilisateurs
-
-    // Rédirections vers la page utilisateur
 })
 
 //Traitement du formulaire d'inscription
