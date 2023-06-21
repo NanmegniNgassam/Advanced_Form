@@ -228,3 +228,13 @@ $smaller-font-size: 0.75rem;
         display: block;
     }
 }
+
+.user {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
