@@ -3,8 +3,8 @@ Code an authentifcation system using JavaScript and some of his hooks (LocalStor
 
 <!--Ajouter une photo de l'interface graphique ( mobile et web )-->
 <div>
-    <img src='assets/img/home_view.png' width='50%'>
-    <img src='assets/img/authentification_view.png' width='50%'>
+    <img src='assets/img/home_view.png' >
+    <img src='assets/img/authentification_view.png'>
 </div>
 
 ## Purposes
